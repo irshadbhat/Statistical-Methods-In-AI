@@ -1,3 +1,12 @@
+K-Nearest Neighbor classifier
+
+Implementation of K-NN classifier with three distance metrics:
+    1. euclidean
+    2. manhattan
+    3. cosine
+
+Example:
+==========================================
 >>> from k_neighbors import K_NN
 >>> clf = K_NN(K=3, metric = 'euclidean')
 >>> clf.fit(X,y)
@@ -7,9 +16,11 @@
 [1]
 >>> clf.predict([4,1])
 [2]
+==========================================
 
 
-
+k-NN for alphabetical data using feature extraction (one-hot representation):
+==============================================================================================
 >>> train = [['med', 'low', '3', '2', 'small', 'high'],
 ...        ['high', 'low', '5more', 'more', 'med', 'high'],
 ...        ['high', 'med', '4', '4', 'big', 'high'],
@@ -71,3 +82,4 @@ array([[1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0],
 >>> 
 >>> clf.predict(vec_test)
 ['acc', 'acc', 'unacc', 'unacc', 'unacc', 'acc', 'acc', 'acc', 'acc', 'unacc']
+==============================================================================================
