@@ -28,7 +28,6 @@ class FeatExtraction():
             unique_feats.append(d)
             offset += len(feat_set_i)
     
-	print unique_feats
 	self.unique_feats = unique_feats
     
     def one_hot(self, X):
@@ -44,4 +43,4 @@ class FeatExtraction():
 		if val in self.unique_feats[j]:
 		    one_hot_matrix[i][self.unique_feats[j][val]] = 1
     
-        return one_hot_matrix
+        return one_hot_matrix.astype(int)
