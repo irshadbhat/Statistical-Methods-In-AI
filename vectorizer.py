@@ -46,4 +46,8 @@ class OneHotEncoder():
 		if val in self.unique_feats[j]:
 		    one_hot_matrix[i, self.unique_feats[j][val]] = 1.0
     
+<<<<<<< HEAD
         return sp.csr_matrix(one_hot_matrix) if self.sparse else one_hot_matrix
+=======
+        return one_hot_matrix.astype(int)
+>>>>>>> c1e94f0fbecb319c6a7329366b30333492f353ee
