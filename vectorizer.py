@@ -20,9 +20,9 @@ class OneHotEncoder():
         new features of the data and indexes represent positions of these 
         new features in transformed form of data."""
 
-	data = np.asarray(X)
-        unique_feats = []
         offset = 0
+        unique_feats = []
+	data = np.asarray(X)
         for i in range(data.shape[1]):
             feat_set_i = set(data[:,i])
             d = {val:i+offset for i,val in enumerate(feat_set_i)}
@@ -46,8 +46,4 @@ class OneHotEncoder():
 		if val in self.unique_feats[j]:
 		    one_hot_matrix[i, self.unique_feats[j][val]] = 1.0
     
-<<<<<<< HEAD
         return sp.csr_matrix(one_hot_matrix) if self.sparse else one_hot_matrix
-=======
-        return one_hot_matrix.astype(int)
->>>>>>> c1e94f0fbecb319c6a7329366b30333492f353ee
