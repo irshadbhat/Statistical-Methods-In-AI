@@ -11,7 +11,7 @@ __email__ = "irshad.bhat@research.iiit.ac.in"
 class OneHotEncoder():
     """Transforms categorical features to continuous numeric features"""
 
-    def __init__(self, sparse=False):
+    def __init__(self, sparse=True):
 	self.sparse = sparse
 
     def fit(self, X):
@@ -32,10 +32,9 @@ class OneHotEncoder():
 	self.unique_feats = unique_feats
     
     def transform(self, X):
-	"""One-hot representation (feature-hashing) is a fast and space-efficient 
-        way of converting categorical features to numeric features, by turning 
-        these features into indices in a vector or matrix. Here the feature and its
-        index position is obtained using fit method."""
+	"""One-hot representation is a fast and space-efficient way of converting categorical 
+	features to numeric features, by turning these features into indices in a vector or 
+	matrix. Here the feature and itsindex position is obtained using fit method."""
 
 	if self.sparse:
 	    one_hot_matrix = sp.lil_matrix((len(X), sum(len(i) for i in self.unique_feats)))
